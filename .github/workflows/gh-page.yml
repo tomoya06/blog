@@ -14,14 +14,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'yarn'
-          cache-dependency-path: docs/yarn.lock
 
       - name: Install and Build 🔧
         run: |
           cd docs
-          yarn install --frozen-lockfile
-          yarn build
+          npm install
+          npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
