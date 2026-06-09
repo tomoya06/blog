@@ -1,18 +1,17 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes: prismThemes } = require('prism-react-renderer');
 
-// With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
-(module.exports = {
+module.exports = {
   title: 'My Site',
   tagline: '互联网就是用来存垃圾的',
-  url: 'https://tomoya06.github.io/',
+  url: 'https://tomoya06.github.io',
   baseUrl: '/blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'tomoya06',
+  projectName: 'blog',
+  trailingSlash: false,
 
   presets: [
     [
@@ -21,14 +20,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/edit/main/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -57,13 +51,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             type: 'doc',
             docId: '剑指offer/剑指offer_intro',
             position: 'left',
-            label: '剑指offer'
+            label: '剑指offer',
           },
           {
             type: 'doc',
             docId: '剑指offer专项版/剑指offer专项版_intro',
             position: 'left',
-            label: '剑指offer专项版'
+            label: '剑指offer专项版',
           },
           { type: 'doc', docId: 'note_intro', label: '随手记', position: 'right' },
           { to: '/blog', label: '博客', position: 'right' },
@@ -87,7 +81,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               {
                 label: '剑指offer专项版题库',
                 to: '/docs/剑指offer专项版/剑指offer专项版_intro',
-              }
+              },
             ],
           },
           {
@@ -111,7 +105,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             title: '我在看...',
             items: [
               {
-                label: 'TypeSctipt',
+                label: 'TypeScript',
                 href: 'https://www.typescriptlang.org/',
               },
               {
@@ -120,16 +114,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               },
               {
                 label: '闲暇时光 ☕',
-                href: 'https://www.youtube.com/'
-              }
-            ]
+                href: 'https://www.youtube.com/',
+              },
+            ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} tomoya06's HomePage, Heavelop Inc. <br>Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} tomoya06's HomePage, Heavelop Inc. Built with Docusaurus.`,
       },
       prism: {
-        darkTheme: darkCodeTheme,
-        theme: lightCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
       colorMode: {
         defaultMode: 'dark',
@@ -137,4 +131,4 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         respectPrefersColorScheme: true,
       },
     }),
-});
+};
