@@ -7,7 +7,11 @@ module.exports = {
   url: 'https://tomoya06.github.io',
   baseUrl: '/blog/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   favicon: 'img/favicon.ico',
   organizationName: 'tomoya06',
   projectName: 'blog',
